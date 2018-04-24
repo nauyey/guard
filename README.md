@@ -92,7 +92,7 @@ Table of Contents
     * [Recursive Validations](#recursive-validations)
     * [Strict Validator](#strict-validator)
     * [Allow Nil Validator Instance](#allow-nil-validator-instance)
-* [Why Another Validation Package?](#why-another-validation-package?)
+* [Why Another Validation Package?](#why-another-validation-package)
 * [How to Contribute](#how-to-contribute)
 
 ---------------------------------------
