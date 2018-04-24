@@ -442,7 +442,7 @@ To quote one of the "Go Proverbs" Rob came up with:
 >
 > Reflection is never clear.
 
-Reflection API loses a lot of valuable type annotating abilities, which may leave bugs to be found until runtime.
+Reflection API loses a lot of valuable type annotating abilities, which may leave bugs to be found until runtime.
 
 So Guard doesn't use reflections.
 
