@@ -3,7 +3,7 @@ Guard
 
 Guard is a simple, elegant and powerful validation solution for golang.
 * **Simple**: Only one main concept -- `Validator` and only one main functional API -- `Validate`.
-* **Elegant**: **It doesn't use reflections.** Static type checking. Simple, efficient and readable APIs. 
+* **Elegant**: **It doesn't use reflections.** Static type checking. Simple, efficient and readable APIs. 
 * **Powerful**: Recursive validations. Built-in validators supplied. Easy to add custom validators. None of differences between custom valdators and built-in validators.
 
 See how easily to use Guard:
@@ -456,7 +456,7 @@ type User struct {
 }
 ```
 
-Tag API has the following disadvantages:
+Tag API has the following disadvantages:
 1. Define a new DSL for validation package. Users have to take time to learn this DSL.
 2. No syntax checking. Util runtime, these syntax errors might be found out. **What's worse** is that package [validator](https://github.com/go-playground/validator), [govalidator](https://github.com/asaskevich/govalidator) and [beego/validation](https://github.com/astaxie/beego/tree/master/validation) don't have any ways to check syntax errors even in the runtime.
 3. No type checking, too.
@@ -471,7 +471,7 @@ Defining a validatoin error interface has the following benefits:
 
 ### Simple vs Complex
 
-Guard is simple. It only has one core concept `Validator` and one main functional API `Validate`. The other validation packages are complicated:
+Guard is simple. It only has one core concept `Validator` and one main functional API `Validate`. The other validation packages are complicated:
 
 | Package          | Types | Functional APIs |
 | ---------------- | ----- | --------------- |
@@ -481,7 +481,7 @@ Defining a validatoin error interface has the following benefits:
 | [govalidator](https://github.com/asaskevich/govalidator) | `Validator`, `CustomTypeValidator`, `ParamValidator`, `Errors`, `Error`, `UnsupportedTypeError`, `customTypeTagMap` | `ValidateStruct`, `ErrorByField`, `ErrorsByField`, `SetFieldsRequiredByDefault` |
 | [beego/validation](https://github.com/astaxie/beego/tree/master/validation) | `Validator`, `ValidFormer`, `Error`, `Result`, `Validation`, | `Clear`, `HasErrors`, `ErrorMap`, `Error`, `AddError`, `SetError`, `Check`, `Valid`, `RecursiveValid` |
 
-### Valiation Packages Comparing
+### Valiation Packages Comparing
 
 | Package | No Reflection? | No Tag API? | Functinoal API? | Validation Error? |Built-inn Validators? | Recursive Validations? |
 | -- | -- | -- | -- | -- | -- | -- |
