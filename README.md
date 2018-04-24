@@ -1,5 +1,6 @@
 Guard
 =====
+<img align="right" width="150" src="./logo.png">
 
 Guard is a simple, elegant and powerful validation solution for golang.
 * **Simple**: Only one main concept -- `Validator` and only one main functional API -- `Validate`.
