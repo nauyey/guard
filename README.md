@@ -85,14 +85,14 @@ Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
     * [Directly Use Validators](#directly-use-validators)
-    * [Custom Validator](#custom_validator)
+    * [Custom Validator](#custom-validator)
     * [Multiple Validations](#multiple-validations)
     * [Validate Struct](#validate-struct)
     * [Validate Associated Structs](#validate-associated-structs)
     * [Recursive Validations](#recursive-validations)
     * [Strict Validator](#strict-validator)
     * [Allow Nil Validator Instance](#allow-nil-validator-instance)
-* [Why Another Valiation Package?](#why-another-valiation-package?)
+* [Why Another Validation Package?](#why-another-validation-package?)
 * [How to Contribute](#how-to-contribute)
 
 ---------------------------------------
@@ -432,7 +432,7 @@ err = book.Validate()
 
 ---------------------------------------
 
-## Why Another Valiation Package?
+## Why Another Validation Package?
 
 ### No Reflection vs Reflection
 
@@ -447,7 +447,7 @@ So Guard doesn't use reflections.
 
 ### Functional API vs Stuct Tag API
 
-Some valiation pacages use struct tag API, like
+Some validation pacages use struct tag API, like
 ```golang
 type User struct {
 	Age       uint8      `validate:"gte=0,lte=130"`
@@ -458,7 +458,7 @@ type User struct {
 
 Tag API has the following disadvantages:
 1. Define a new DSL for validation package. Users have to take time to learn this DSL.
-2. No syntax checking. Util runtime, these syntax errors might be found out. **What's worse** is that package [validator](https://github.com/go-playground/validator), [govalidator](https://github.com/asaskevich/govalidator) and [beego/validation](https://github.com/astaxie/beego/tree/master/validation) don't have any ways to check syntax errors even in the runtime.
+2. No syntax checking. Util runtime, these syntax errors might be found out. **What's worse** is that package [validator](https://github.com/go-playground/validator), [govalidator](https://github.com/asaskevich/govalidator) and [beego/validation](https://github.com/astaxie/beego/tree/master/validation) don't have any ways to check syntax errors even in the runtime.
 3. No type checking, too.
 
 ### Error Interface vs Error Implementation
@@ -481,7 +481,7 @@ Guard is simple. It only has one core concept `Validator` and one main functiona
 | [govalidator](https://github.com/asaskevich/govalidator) | `Validator`, `CustomTypeValidator`, `ParamValidator`, `Errors`, `Error`, `UnsupportedTypeError`, `customTypeTagMap` | `ValidateStruct`, `ErrorByField`, `ErrorsByField`, `SetFieldsRequiredByDefault` |
 | [beego/validation](https://github.com/astaxie/beego/tree/master/validation) | `Validator`, `ValidFormer`, `Error`, `Result`, `Validation`, | `Clear`, `HasErrors`, `ErrorMap`, `Error`, `AddError`, `SetError`, `Check`, `Valid`, `RecursiveValid` |
 
-### Valiation Packages Comparing
+### Validation Packages Comparing
 
 | Package | No Reflection? | No Tag API? | Functinoal API? | Validation Error? |Built-inn Validators? | Recursive Validations? |
 | -- | -- | -- | -- | -- | -- | -- |
