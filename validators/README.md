@@ -88,6 +88,7 @@ More advanced usages, see [guard documentations](../README.md)
 ## Roadmap
 
 The following features are what we planed to support. If you are interested in any of them, please send us a pull request. The [How to Contribute](../README.md#how-to-contribute) explains how to send a pull request.
+- [ ] Refactor all the error messages
 - [ ] Support easily batch override defualt error messages
 - [ ] Numeric int64
 - [ ] Numeric int32
