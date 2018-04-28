@@ -104,6 +104,15 @@ func (v *allowNilValidator) Validate() error {
 	return v.validator.Validate()
 }
 
+type chainedValidator struct {
+	validators []Validator
+}
+
+// Validate implements the Validator interface
+func (v *chainedValidator) Validate() error {
+	return Validate(v.validators...)
+}
+
 type errors struct {
 	errs []error
 }
