@@ -232,3 +232,24 @@ func TestValidateStrictly(t *testing.T) {
 		t.Errorf("guard.ValidateStrictly failed with len(vErrs)=%d, want len(vErrs)=2", len(vErrs))
 	}
 }
+
+func TestAllowNil(t *testing.T) {
+	// test with nil validator
+	var v *testValidator
+	err := guard.Validate(
+		guard.AllowNil(v),
+	)
+	if err != nil {
+		t.Errorf("guard.AllowNil failed to allow nil validators")
+	}
+
+	// test with non-nil validator
+	err = guard.Validate(
+		guard.AllowNil(&testValidator{
+			err: &validationError{},
+		}),
+	)
+	if err == nil {
+		t.Errorf("guard.AllowNil failed")
+	}
+}
