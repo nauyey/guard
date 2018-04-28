@@ -90,8 +90,6 @@ func (v *allowNilValidator) Validate() error {
 	return v.validator.Validate()
 }
 
-func (v *allowNilValidator) strict() {}
-
 type errors struct {
 	errs []error
 }
