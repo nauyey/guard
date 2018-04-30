@@ -468,7 +468,7 @@ It seems it's a common sense to define a validation error type for validation pa
 
 Defining a validatoin error interface has the following benefits:
 * Custom validation implementations don't directly depend on the validation package, like Guard.
-* Abilities of the custom validation error aren't limited by a specific validation package. Take the custom validation error of Guard, it only needs to implement the interface `loupe.Error` or interface `loupe.Errors`. Otherwise, it can define anything it really wants.
+* Abilities of the custom validation error aren't limited by a specific validation package. Take the custom validation error of Guard, it only needs to implement the interface `guard.Error` or interface `guard.Errors`. Otherwise, it can define anything it really wants.
 
 ### Simple vs Complex
 
