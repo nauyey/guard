@@ -484,7 +484,7 @@ Guard is simple. It only has one core concept `Validator` and one main functiona
 
 ### Validation Packages Comparing
 
-| Package | No Reflection? | No Tag API? | Functinoal API? | Validation Error? |Built-inn Validators? | Recursive Validations? |
+| Package | No Reflection? | No Tag API? | Functinoal API? | Validation Error? |Built-in Validators? | Recursive Validations? |
 | -- | -- | -- | -- | -- | -- | -- |
 | Guard | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [ozzo-validation](https://github.com/go-ozzo/ozzo-validation) | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
