@@ -46,6 +46,10 @@ func (v *StringNotBlank) Validate() error {
 	return nil
 }
 
+func (v *StringNotBlank) SetValue(value string) {
+	v.Value = value
+}
+
 // OverrideMessage overrides the validation error message of current validator
 func (v *StringNotBlank) OverrideMessage(msg string) *StringNotBlank {
 	v.message = &msg
@@ -69,6 +73,10 @@ func (v *StringInclusion) Validate() error {
 	return nil
 }
 
+func (v *StringInclusion) SetValue(value string) {
+	v.Value = value
+}
+
 // OverrideMessage overrides the validation error message of current validator
 func (v *StringInclusion) OverrideMessage(msg string) *StringInclusion {
 	v.message = &msg
@@ -90,6 +98,10 @@ func (v *StringExclusion) Validate() error {
 	}
 
 	return nil
+}
+
+func (v *StringExclusion) SetValue(value string) {
+	v.Value = value
 }
 
 // OverrideMessage overrides the validation error message of current validator
@@ -119,6 +131,10 @@ func (v *StringLength) Validate() error {
 	}
 
 	return nil
+}
+
+func (v *StringLength) SetValue(value string) {
+	v.Value = value
 }
 
 // OverrideTooShortMessage overrides the error message of the too short string validation

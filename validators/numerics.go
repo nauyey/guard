@@ -28,6 +28,10 @@ func (v *IsOdd) Validate() error {
 	return nil
 }
 
+func (v *IsOdd) SetValue(value int) {
+	v.Value = value
+}
+
 // OverrideMessage overrides the validation error message of current validator
 func (v *IsOdd) OverrideMessage(msg string) *IsOdd {
 	v.message = &msg
@@ -47,6 +51,10 @@ func (v *IsEven) Validate() error {
 		return &validationError{returnDefaultStringIfNil(v.message, isEvenMsg)}
 	}
 	return nil
+}
+
+func (v *IsEven) SetValue(value int) {
+	v.Value = value
 }
 
 // OverrideMessage overrides the validation error message of current validator
@@ -71,6 +79,10 @@ func (v *IntGreaterThan) Validate() error {
 	return nil
 }
 
+func (v *IntGreaterThan) SetValue(value int) {
+	v.Value = value
+}
+
 // OverrideMessage overrides the validation error message of current validator
 func (v *IntGreaterThan) OverrideMessage(msg string) *IntGreaterThan {
 	v.message = &msg
@@ -91,6 +103,10 @@ func (v *IntGreaterThanOrEqualTo) Validate() error {
 		return &validationError{returnDefaultStringIfNil(v.message, intGreaterThanOrEqualToMsg)}
 	}
 	return nil
+}
+
+func (v *IntGreaterThanOrEqualTo) SetValue(value int) {
+	v.Value = value
 }
 
 // OverrideMessage overrides the validation error message of current validator
@@ -115,6 +131,10 @@ func (v *IntEqualTo) Validate() error {
 	return nil
 }
 
+func (v *IntEqualTo) SetValue(value int) {
+	v.Value = value
+}
+
 // OverrideMessage overrides the validation error message of current validator
 func (v *IntEqualTo) OverrideMessage(msg string) *IntEqualTo {
 	v.message = &msg
@@ -137,6 +157,10 @@ func (v *IntLessThan) Validate() error {
 	return nil
 }
 
+func (v *IntLessThan) SetValue(value int) {
+	v.Value = value
+}
+
 // OverrideMessage overrides the validation error message of current validator
 func (v *IntLessThan) OverrideMessage(msg string) *IntLessThan {
 	v.message = &msg
@@ -157,6 +181,10 @@ func (v *IntLessThanOrEqualTo) Validate() error {
 		return &validationError{returnDefaultStringIfNil(v.message, intLessThanOrEqualToMsg)}
 	}
 	return nil
+}
+
+func (v *IntLessThanOrEqualTo) SetValue(value int) {
+	v.Value = value
 }
 
 // OverrideMessage overrides the validation error message of current validator
@@ -184,6 +212,10 @@ func (v *IntInRange) Validate() error {
 		return &validationError{returnDefaultStringIfNil(v.rightMessage, intInRangeRightMsg)}
 	}
 	return nil
+}
+
+func (v *IntInRange) SetValue(value int) {
+	v.Value = value
 }
 
 // OverrideLeftMessage overrides the error message of the out of left range validation
