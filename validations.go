@@ -60,6 +60,20 @@ func AllowNil(v Validator) Validator {
 	}
 }
 
+// Chain organizes a series of validators as a chain.
+// The validators in this chain will be executed one by one.
+// The chain will be failed if any validator is failed.
+func Chain(validators ...Validator) Validator {
+	chainedValidators := []Validator{}
+	for _, validator := range validators {
+		chainedValidators = append(chainedValidators, Strict(validator))
+	}
+
+	return &chainedValidator{
+		validators: chainedValidators,
+	}
+}
+
 type strictValidators struct {
 	validators []Validator
 }
@@ -88,6 +102,15 @@ func (v *allowNilValidator) Validate() error {
 		return nil
 	}
 	return v.validator.Validate()
+}
+
+type chainedValidator struct {
+	validators []Validator
+}
+
+// Validate implements the Validator interface
+func (v *chainedValidator) Validate() error {
+	return Validate(v.validators...)
 }
 
 type errors struct {

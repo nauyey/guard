@@ -253,3 +253,26 @@ func TestAllowNil(t *testing.T) {
 		t.Errorf("guard.AllowNil failed")
 	}
 }
+
+func TestChain(t *testing.T) {
+	err := guard.Validate(
+		guard.Chain(
+			&testValidator{},
+			&testValidator{err: &validationError{}},
+			&testValidator{},
+			&testValidator{err: &validationError{}},
+		),
+	)
+
+	if err == nil {
+		t.Errorf("guard.Chain failed")
+	}
+
+	errs, ok := err.(guard.Errors)
+	if !ok {
+		t.Errorf("guard.Chain failed")
+	}
+	if len(errs.ValidationErrors()) != 1 {
+		t.Errorf("guard.Chain failed by returning wrong count of errors")
+	}
+}
