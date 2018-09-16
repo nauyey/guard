@@ -16,3 +16,7 @@ func returnDefaultStringIfNil(s *string, d string) string {
 	}
 	return d
 }
+
+func ReturnGenericError(s string) error {
+	return &validationError{s}
+}
