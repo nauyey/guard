@@ -7,3 +7,4 @@ Author
 
 Patches and Suggestions
 - - - - - - - - - - - -
+* Jannik Kramer \<<mail@jannikkramer.de\> [@jannik-kramer](https://github.com/jannik-kramer)
