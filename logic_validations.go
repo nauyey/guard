@@ -6,8 +6,8 @@ import (
 
 const (
 	atLeastOneMsg = "at leat one" // OR
-	onlyOneMsg = "only one" // XOR
-	notAllMsg = "not all" // NAND
+	onlyOneMsg    = "only one"    // XOR
+	notAllMsg     = "not all"     // NAND
 )
 
 type (
@@ -21,7 +21,6 @@ type (
 		validators []Validator
 	}
 )
-
 
 // Or wraps validators in a group in which
 // *at least one* of the validators is allowed to pass.

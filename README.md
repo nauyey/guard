@@ -456,11 +456,11 @@ func (server *Server) Validate() error {
 }
 
 server := &Server{
-    Keyfile: "/id_rsa",
+    Keyfile:  "/id_rsa",
     Password: "3gj)s0dß?=§F")=3f",
 }
 
-err = sser.Validate()
+err = server.Validate()
 // err -> not nil
 ```
 
