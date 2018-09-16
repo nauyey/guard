@@ -1,7 +1,7 @@
 package guard
 
 import (
-	"guard/validators"
+	"github.com/nauyey/guard/validators"
 )
 
 const (
