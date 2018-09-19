@@ -93,6 +93,7 @@ Table of Contents
     * [Recursive Validations](#recursive-validations)
     * [Strict Validator](#strict-validator)
     * [Allow Nil Validator Instance](#allow-nil-validator-instance)
+    * [Logic Group Validation](#logic-group-validation)
 * [Why Another Validation Package?](#why-another-validation-package)
 * [How to Contribute](#how-to-contribute)
 
@@ -429,6 +430,38 @@ book := &Book{
 
 err = book.Validate()
 // err -> nil
+```
+
+### Logic Group Validation
+
+```golang
+import (
+	"github.com/nauyey/guard"
+	"github.com/nauyey/guard/validators"
+)
+
+type Server struct {
+	Keyfile  string
+	Password string
+}
+
+// Validate implements interface guard.Validator
+func (server *Server) Validate() error {
+	return guard.Validate(
+	    guard.Xor(
+		    &validators.StringNotBlank{Value: user.Keyfile},
+		    &validators.StringNotBlank{Value: user.Password},
+	    ),
+	)
+}
+
+server := &Server{
+    Keyfile:  "/id_rsa",
+    Password: "3gj)s0dß?=§F")=3f",
+}
+
+err = server.Validate()
+// err -> not nil
 ```
 
 ---------------------------------------
